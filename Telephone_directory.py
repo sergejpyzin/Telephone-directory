@@ -1,12 +1,17 @@
+def filling_directory():
+    with open("telephone_directory.txt", "a", encoding="utf-8") as file:
+        file.write(input("Введите Фамилию: ") + " ")
+        file.write(input("Введите Имя: ") + " ")
+        file.write(input("Введите Отчество: ") + " ")
+        file.write(str(int(input("Введите телефон: "))) + "\n")
+
+
 def user_imprt():
+    filling_directory()
     while True:
         answer = int(input("Вы хотите продолжить, введите ответ (1 - да, продолжить; 2 - нет, выйти)\n"))
         if answer == 1:
-            with open ("telephone_directory.txt", "a", encoding="utf-8") as file:
-                file.write(input("Введите Фамилию: ") + " ")
-                file.write(input("Введите Имя: ") + " ")
-                file.write(input("Введите Отчество: ") + " ")
-                file.write(str(int(input("Введите телефон: "))) + "\n")
+            filling_directory()
         else:
             break
 
@@ -21,7 +26,10 @@ def user_search():
                     return print(*line)
             line = file.readline().split()
 
-def user_interaction (choice):
+
+def user_interaction():
+    choice = int(input("Выберете метод взаимодействия с телефонным справочником. Введите номер операции  "
+                                 "(1 - заполнение справочника; 2 - поиск абонента):\n"))
     if choice == 1:
         return user_imprt()
     elif choice == 2:
@@ -30,6 +38,4 @@ def user_interaction (choice):
         return print("Извините. Введенный номер операции некоректен")
 
 
-
-user_interaction(int(input("Выберете метод взаимодействия с телефонным справочником. Введите номер операции  "
-                                 "(1 - заполнение справочника; 2 - поиск абонента):\n")))
+user_interaction()
