@@ -1,9 +1,14 @@
 def user_imprt():
-    with open ("telephone_directory.txt", "a", encoding="utf-8") as file:
-        file.write(input("Введите Фамилию: ") + " ")
-        file.write(input("Введите Имя: ") + " ")
-        file.write(input("Введите Отчество: ") + " ")
-        file.write(str(int(input("Введите телефон: "))) + "\n")
+    while True:
+        answer = int(input("Вы хотите продолжить, введите ответ (1 - да, продолжить; 2 - нет, выйти)\n"))
+        if answer == 1:
+            with open ("telephone_directory.txt", "a", encoding="utf-8") as file:
+                file.write(input("Введите Фамилию: ") + " ")
+                file.write(input("Введите Имя: ") + " ")
+                file.write(input("Введите Отчество: ") + " ")
+                file.write(str(int(input("Введите телефон: "))) + "\n")
+        else:
+            break
 
 
 def user_search():
