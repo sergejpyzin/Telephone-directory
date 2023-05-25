@@ -3,14 +3,14 @@ def filling_directory():
         file.write(input("Введите Фамилию: ") + " ")
         file.write(input("Введите Имя: ") + " ")
         file.write(input("Введите Отчество: ") + " ")
-        file.write(str(int(input("Введите телефон: "))) + "\n")
+        file.write(input("Введите телефон: ") + "\n")
 
 
 def user_imprt():
     filling_directory()
     while True:
-        answer = int(input("Вы хотите продолжить, введите ответ (1 - да, продолжить; 2 - нет, выйти в главное меню; ) "
-                           "нажмите любую клавишу для завершения работы программы.\n"))
+        answer = int(input("Вы хотите продолжить, введите ответ (1 - да, продолжить;  "
+                           "2 - нет, выйти в главное меню;)\n"))
         if answer == 1:
             filling_directory()
         elif answer == 2:
