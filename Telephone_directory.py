@@ -9,8 +9,8 @@ def filling_directory():
 def user_imprt():
     filling_directory()
     while True:
-        answer = int(input("Вы хотите продолжить, введите ответ (1 - да, продолжить; 2 - нет, выйти в главное меню;) "
-                           "нажмите любую клавишу для завершения работы программы\n"))
+        answer = int(input("Вы хотите продолжить, введите ответ (1 - да, продолжить; 2 - нет, выйти в главное меню; ) "
+                           "нажмите любую клавишу для завершения работы программы.\n"))
         if answer == 1:
             filling_directory()
         elif answer == 2:
@@ -38,7 +38,8 @@ def user_interaction():
     elif choice == 2:
         return user_search()
     else:
-        return print("Извините. Введенный номер операции некоректен")
+        print("Извините. Введенный номер операции некоректен")
+        return user_interaction()
 
 
 user_interaction()
