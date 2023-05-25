@@ -1,3 +1,4 @@
+# Создаем функцию записи информации в файл
 def filling_directory():
     with open("telephone_directory.txt", "a", encoding="utf-8") as file:
         file.write(input("Введите Фамилию: ") + " ")
@@ -6,10 +7,11 @@ def filling_directory():
         file.write(input("Введите телефон: ") + "\n")
 
 
+# Создаем функцию добавления информации в файл
 def user_imprt():
     filling_directory()
     while True:
-        answer = int(input("Вы хотите продолжить, введите ответ (1 - да, продолжить;  "
+        answer = int(input("Вы хотите продолжить, введите ответ (1 - да, продолжить; "
                            "2 - нет, выйти в главное меню;)\n"))
         if answer == 1:
             filling_directory()
@@ -19,6 +21,7 @@ def user_imprt():
             break
 
 
+# Создаем функцию поиска информации в файле
 def user_search():
     with open('telephone_directory.txt', 'r', encoding="utf-8") as file:
         search_el = input()
@@ -30,6 +33,7 @@ def user_search():
             line = file.readline().split()
 
 
+# Создаем функцию взаимодействия с пользователем
 def user_interaction():
     choice = int(input("Выберете метод взаимодействия с телефонным справочником. Введите номер операции  "
                        "(1 - заполнение справочника; 2 - поиск абонента):\n"))
