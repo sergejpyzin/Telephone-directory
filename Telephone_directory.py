@@ -9,27 +9,30 @@ def filling_directory():
 def user_imprt():
     filling_directory()
     while True:
-        answer = int(input("Вы хотите продолжить, введите ответ (1 - да, продолжить; 2 - нет, выйти)\n"))
+        answer = int(input("Вы хотите продолжить, введите ответ (1 - да, продолжить; 2 - нет, выйти в главное меню;) "
+                           "нажмите любую клавишу для завершения работы программы\n"))
         if answer == 1:
             filling_directory()
+        elif answer == 2:
+            user_interaction()
         else:
             break
 
 
 def user_search():
     with open('telephone_directory.txt', 'r', encoding="utf-8") as file:
-        search_word = input()
+        search_el = input()
         line = file.readline().split()
         while line:
             for el in line:
-                if el == search_word:
+                if el == search_el:
                     return print(*line)
             line = file.readline().split()
 
 
 def user_interaction():
     choice = int(input("Выберете метод взаимодействия с телефонным справочником. Введите номер операции  "
-                                 "(1 - заполнение справочника; 2 - поиск абонента):\n"))
+                       "(1 - заполнение справочника; 2 - поиск абонента):\n"))
     if choice == 1:
         return user_imprt()
     elif choice == 2:
