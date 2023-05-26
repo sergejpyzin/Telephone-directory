@@ -30,6 +30,8 @@ def user_search():
             for el in line:
                 if el == search_el:
                     return print(*line)
+                else:
+                    return print("Искомый абонент не найден!")
             line = file.readline().split()
 
 
