@@ -29,10 +29,15 @@ def user_search():
         while line:
             for el in line:
                 if el == search_el:
-                    return print(*line)
+                    print(*line)
                 else:
-                    return print("Искомый абонент не найден!")
+                    print("Искомый абонент не найден!")
             line = file.readline().split()
+
+
+def read():
+    
+
 
 
 # Создаем функцию взаимодействия с пользователем
@@ -43,6 +48,7 @@ def user_interaction():
         return user_imprt()
     elif choice == 2:
         return user_search()
+
     else:
         print("Извините. Введенный номер операции некоректен")
         return user_interaction()
